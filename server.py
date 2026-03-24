@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 메뉴 항목 — 원하는 대로 추가/수정
-MENU_ITEMS = ['밀크티1', '밀크티2','티칵테일1','티칵테일2']
+MENU_ITEMS = ['밀크티1', '밀크티2','티칵테일1','티칵테일2','오트밀크','취소']
 
 SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
