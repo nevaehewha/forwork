@@ -57,8 +57,9 @@ def record():
         return jsonify({'ok': False, 'error': f'알 수 없는 항목: {item}'}), 400
 
     ws = get_sheet()
-   KST = pytz.timezone('Asia/Seoul')
+    KST = pytz.timezone('Asia/Seoul')
     now = datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S')
+
     row = [now] + [1 if m == item else 0 for m in MENU_ITEMS]
     ws.append_row(row)
 
