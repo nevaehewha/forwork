@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>홍작 대동제 판매 데이터</title>
+<title>홍작 대동제 판매 데이터</title> <!-- 사이트 명 -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap');
 
@@ -179,20 +179,20 @@
 <div class="wrap">
 
   <header>
-    <p class="label">음료 주문 기록 시스템</p>
-    <h1>26-1<br>홍작 대동제 카운팅 시스템</h1>
+    <p class="label">음료 주문 기록 시스템</p> <!-- 제목 위 작은 글씨 -->
+    <h1>26-1<br>홍작 대동제 카운팅 시스템</h1> <!-- 큰 제목 & <br>은 엔터키 같은 거 -->
   </header>
 
   <div class="status-bar">
     <span class="status-dot" id="dot"></span>
-    <span id="status-text">서버 연결 확인 중...</span>
+    <span id="status-text">서버 연결 확인 중...</span> <!-- 서버 연결 안되면 구글 시트에 업로드가 안됩니다 -->
   </div>
 
-  <!-- ✦ 버튼 추가 시: data-item = server.py MENU_ITEMS 항목명과 일치 -->
+  <!-- ✦ 버튼 추가 시: data-item = server.py MENU_ITEMS 항목명과 일치 // 여기서 이름 바꾸면 server.py도 메뉴 아이템 항목 명과 일치하게 수정해야합니다 -->
   <div class="btn-grid">
     <button class="drink-btn" data-item="밀크티1"
             style="--flash-color:rgba(251,146,60,0.18)" onclick="record(this)">
-      <span class="btn-emoji">🍊</span>
+      <span class="btn-emoji">🧋</span>
       <span class="btn-name">밀크티1</span>
       <span class="btn-sub">Milk Tea1</span>
       <span class="btn-count" id="cnt-밀크티1">0회</span>
@@ -206,11 +206,9 @@
       <span class="btn-count" id="cnt-밀크티2">0회</span>
     </button>
 
-    <!-- 기존 오렌지 / 커피 아래에 이어서 추가 -->
-
 <button class="drink-btn" data-item="티칵테일1"
         style="--flash-color:rgba(244,63,94,0.15)" onclick="record(this)">
-  <span class="btn-emoji">🍎</span>
+  <span class="btn-emoji">🍷</span>
   <span class="btn-name">티칵테일1</span>
   <span class="btn-sub">Tea Cocktail1</span>
   <span class="btn-count" id="cnt-티칵테일1">0회</span>
@@ -218,7 +216,7 @@
 
 <button class="drink-btn" data-item="티칵테일2"
         style="--flash-color:rgba(30,30,30,0.15)" onclick="record(this)">
-  <span class="btn-emoji">🥤</span>
+  <span class="btn-emoji">🍹</span>
   <span class="btn-name">티칵테일2</span>
   <span class="btn-sub">Tea Cocktail2</span>
   <span class="btn-count" id="cnt-티칵테일2">0회</span>
@@ -226,15 +224,15 @@
 
 <button class="drink-btn" data-item="오트밀크"
         style="--flash-color:rgba(34,197,94,0.15)" onclick="record(this)">
-  <span class="btn-emoji">🍵</span>
+  <span class="btn-emoji">🥛</span>
   <span class="btn-name">오트밀크</span>
   <span class="btn-sub">Oat Milk</span>
   <span class="btn-count" id="cnt-오트밀크">0회</span>
 </button>
 
-<button class="drink-btn" data-item="취소"
+<button class="drink-btn" data-item="취소" <!-- 취소 같은 경우 값을 지우는게 아니라 그냥 취소 행에 1 입력하게 되어있습니다. 실수로 눌렀을 때 이전 데이터가 지워지는 걸 방지하기 위함입니다. -->
         style="--flash-color:rgba(200,200,200,0.2)" onclick="record(this)">
-  <span class="btn-emoji">🥛</span>
+  <span class="btn-emoji">❌</span>
   <span class="btn-name">취소</span>
   <span class="btn-sub">Cancel</span>
   <span class="btn-count" id="cnt-취소">0회</span>
@@ -243,7 +241,7 @@
     
   </div>
 
-  <p class="section-title">최근 기록 (Google Sheets 연동)</p>
+  <p class="section-title">최근 기록 (Google Sheets 연동)</p> <!-- 아마 최신 기록 20개가 출력될 겁니다 -->
   <div class="table-wrap">
     <div id="table-area">
       <div class="empty-msg">버튼을 누르면 기록이 나타납니다</div>
@@ -255,7 +253,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-  // ✦ Railway 배포 후 발급받은 URL로 교체
+  <!-- Railway 배포 후 발급받은 URL로 교체  -->
   const SERVER = 'https://forwork-production.up.railway.app';
 
   const counts = {};
